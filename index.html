@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=demo/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo a reactive-store-js demo...</title>
+  <style>
+    body {
+      background: #0f1117;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #2a2e45;
+      border-top-color: #7c6af7;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    a {
+      color: #7c6af7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <p>Redirigiendo al dashboard...</p>
+    <p><a href="demo/">Click aquí si no se redirige automáticamente</a></p>
+  </div>
+  <script>
+    // Redirección alternativa por si falla el meta refresh
+    setTimeout(() => {
+      window.location.href = 'demo/';
+    }, 100);
+  </script>
+</body>
+</html>

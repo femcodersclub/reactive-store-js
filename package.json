@@ -1,0 +1,23 @@
+{
+  "name": "reactive-store-js",
+  "version": "1.0.0",
+  "description": "Sistema de estado reactivo usando Proxy nativo de JavaScript. Sin dependencias externas.",
+  "main": "src/store.js",
+  "scripts": {
+    "test": "node tests/store.test.js",
+    "example": "node examples/ejemplo-basico.js",
+    "demo": "npx serve ."
+  },
+  "keywords": [
+    "reactive",
+    "state-management",
+    "proxy",
+    "vanilla-js",
+    "observer-pattern"
+  ],
+  "author": "FemCoders Club",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

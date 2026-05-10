@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FemCoders Club — Dashboard de Comunidad</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-icon">⬡</span>
+        <div>
+          <h1 class="brand-name">FemCoders Club</h1>
+          <p class="brand-sub">Dashboard de comunidad · reactive-store-js</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-ghost" id="btn-undo" title="Deshacer">↩ Deshacer</button>
+        <button class="btn btn-ghost" id="btn-redo" title="Rehacer">↪ Rehacer</button>
+        <button class="btn btn-ghost" id="btn-devtools">🛠 DevTools</button>
+        <button class="btn btn-primary" id="btn-simulate">▶ Simular actividad</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- KPIs -->
+    <section class="kpi-grid">
+      <div class="kpi-card" data-reactive="members.total">
+        <span class="kpi-label">Miembras totales</span>
+        <span class="kpi-value" id="kpi-members">—</span>
+        <span class="kpi-delta" id="kpi-members-delta"></span>
+      </div>
+      <div class="kpi-card" data-reactive="members.active">
+        <span class="kpi-label">Activas este mes</span>
+        <span class="kpi-value" id="kpi-active">—</span>
+        <span class="kpi-delta" id="kpi-active-delta"></span>
+      </div>
+      <div class="kpi-card" data-reactive="events.upcoming">
+        <span class="kpi-label">Eventos próximos</span>
+        <span class="kpi-value" id="kpi-events">—</span>
+      </div>
+      <div class="kpi-card computed" data-reactive="retentionRate">
+        <span class="kpi-label">Tasa de retención</span>
+        <span class="kpi-value" id="kpi-retention">—</span>
+        <span class="kpi-badge">computed</span>
+      </div>
+    </section>
+
+    <!-- Gráfico de lenguajes + actividad reciente -->
+    <section class="content-grid">
+
+      <div class="card">
+        <h2 class="card-title">Lenguajes más usados</h2>
+        <div class="lang-chart" id="lang-chart"></div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Actividad reciente</h2>
+        <ul class="activity-feed" id="activity-feed"></ul>
+      </div>
+
+    </section>
+
+    <!-- Panel de filtros -->
+    <section class="card filters-card">
+      <h2 class="card-title">Filtros de vista</h2>
+      <div class="filters">
+        <label class="filter-label">
+          Nivel de experiencia
+          <select class="filter-select" id="filter-level">
+            <option value="all">Todas</option>
+            <option value="junior">Junior</option>
+            <option value="mid">Mid</option>
+            <option value="senior">Senior</option>
+          </select>
+        </label>
+        <label class="filter-label">
+          País
+          <select class="filter-select" id="filter-country">
+            <option value="all">Todos</option>
+            <option value="es">España</option>
+            <option value="mx">México</option>
+            <option value="ar">Argentina</option>
+            <option value="co">Colombia</option>
+          </select>
+        </label>
+        <div class="filter-result">
+          Mostrando: <strong id="filter-result-text">todas las miembras</strong>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Panel DevTools -->
+  <aside class="devtools-panel" id="devtools-panel" aria-hidden="true">
+    <div class="devtools-header">
+      <span>🛠 DevTools — reactive-store-js</span>
+      <button class="devtools-close" id="devtools-close">✕</button>
+    </div>
+    <div class="devtools-body">
+      <pre id="devtools-output"></pre>
+    </div>
+  </aside>
+
+  <!-- Notificación de cambio de estado -->
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="../src/store.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
