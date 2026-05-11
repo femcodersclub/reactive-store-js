@@ -2,7 +2,7 @@
 
 Sistema de estado reactivo construido con `Proxy` nativo de JavaScript. Sin frameworks, sin dependencias externas. Vanilla JS puro.
 
-Proyecto del Post 06 de la [Serie JavaScript de FemCoders Club](https://femcodersclub.com) — **Patrones de Diseño en JavaScript Puro**.
+**Este proyecto está hecho para reforzar el contenido del post:** [Patrones de Diseño en JavaScript](https://www.femcodersclub.com/recursos/js/patrones-diseno-javascript) — Parte de la Serie JavaScript de [FemCoders Club](https://femcodersclub.com).
 
 ---
 
@@ -138,17 +138,3 @@ Total: 23 passed · 0 failed
 ---
 
 Proyecto de [FemCoders Club](https://femcodersclub.com) · Serie JavaScript · Post 06
-
----
-
-## GitHub Pages
-
-Para publicar el proyecto en GitHub Pages:
-
-1. Ve a **Settings** → **Pages** en tu repositorio de GitHub
-2. En **Source**, selecciona la rama `main` y carpeta `/ (root)`
-3. Guarda los cambios
-4. GitHub Pages construirá y publicará tu sitio en unos minutos
-5. Accede a tu dashboard en: `https://femcodersclub.github.io/reactive-store-js/`
-
-El `index.html` en la raíz redirige automáticamente a `/demo/` donde está el dashboard interactivo.
